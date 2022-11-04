@@ -25,13 +25,11 @@ while True:
 	girilenKelime = input()
 	var = False
 	for x in kelimeler:
-		if(x==girilenKelime and girilenKelime[0]==ilkKarakter):
-			for y in yasakKelime:
-				if(girilenKelime!=y):
-					var = True
-					puan += 1
-					ilkKarakter = girilenKelime[len(girilenKelime)-1]
-					yasakKelime.append(girilenKelime)
+		if(x==girilenKelime and girilenKelime[0]==ilkKarakter and girilenKelime not in yasakKelime):
+			var = True
+			puan += 1
+			ilkKarakter = girilenKelime[len(girilenKelime)-1]
+			yasakKelime.append(girilenKelime)
 	print(var)
 	if(var == False):
 		print("puan=" +str(puan))
